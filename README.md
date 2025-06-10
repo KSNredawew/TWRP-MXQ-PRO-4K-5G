@@ -16,6 +16,6 @@ SOON
 
 
 **Support:**
-twrp for WI-FI ESP8089
-
 For support, please consult online forums dedicated to the MXQ PRO 4K 5G.
+
+twrp for WI-FI ESP8089
