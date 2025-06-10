@@ -1,0 +1,16 @@
+# mount point   fstype      device                  [device2]
+
+/boot           emmc        /dev/block/boot    	   /dev/block/mmcblk0p12   flags=backup=1;display=Boot
+/recovery       emmc        /dev/block/recovery    /dev/block/mmcblk0p6    flags=backup=1;display=Recovery
+/system         ext4        /dev/block/system      /dev/block/mmcblk0p13   flags=backup=1;display=System
+/data           ext4        /dev/block/data        /dev/block/mmcblk0p14   flags=backup=1
+/cache          ext4        /dev/block/cache       /dev/block/mmcblk0p3    flags=backup=1;display=Cache
+/bootloader     emmc        /dev/block/bootloader  /dev/block/mmcblk0p1    flags=backup=1;display=Bootloader
+/reserved	emmc 	    /dev/block/reserved    /dev/block/mmcblk0p2    flags=backup=1;display=Reserved
+/env            emmc        /dev/block/env    	   /dev/block/mmcblk0p4	   flags=backup=1;display=Env
+/rsv		emmc	    /dev/block/rsv    	   /dev/block/mmcblk0p7	   flags=backup=1;display=RSV
+/tee            emmc        /dev/block/tee    	   /dev/block/mmcblk0p8    flags=backup=1;display=Tee
+/crypt          emmc        /dev/block/crypt  	   /dev/block/mmcblk0p9    flags=backup=1;display=Crypt
+/misc           emmc        /dev/block/misc    	   /dev/block/mmcblk0p10   flags=backup=1;display=Misc
+/external_sd    auto        /dev/block/mmcblk1p1    flags=wipeingui;storage;removable;display="External SD"
+/usb-otg        auto        /dev/block/sda1         flags=display="USB OTG";removable;storage
