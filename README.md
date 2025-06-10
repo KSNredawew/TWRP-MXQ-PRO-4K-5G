@@ -11,7 +11,7 @@ SOON
 **Installation:**
 
 1.  Download the TWRP image.
-2.  Use a tool like SP Flash Tool to flash the recovery image.
+2.  SOON
 3.  Reboot your device.
 
 
