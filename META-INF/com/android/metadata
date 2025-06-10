@@ -1,1 +1,5 @@
-
+ota-required-cache=0
+ota-type=BLOCK
+post-build=Amlogic/q201/q201:7.1.2/NHG47L/20171230:userdebug/test-keys
+post-timestamp=1514568960
+pre-device=q201
