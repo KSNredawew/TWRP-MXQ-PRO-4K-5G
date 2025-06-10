@@ -1,0 +1,151 @@
+ui_print("------------------------------------------");
+ui_print("-= ViT 3.2.2 AML TWRP recovery from zip =-");
+ui_print("------------------------------------------");
+ui_print("");
+show_progress(0.750000, 0); 
+ui_print("- Extract TWRP files...");
+package_extract_dir("license", "/license");
+set_perm_recursive(0, 0, 0755, 0644, "/license"); 
+package_extract_dir("res", "/res");
+set_perm_recursive(0, 0, 0755, 0644, "/res");
+delete_recursive("/twres");
+package_extract_dir("twres", "/twres");
+set_perm_recursive(0, 0, 0755, 0644, "/twres"); 
+package_extract_dir("etc", "/etc");
+set_perm_recursive(0, 0, 0755, 0644, "/etc"); 
+package_extract_dir("system", "/system");
+set_perm_recursive(0, 0, 0755, 0644, "/system");
+set_perm_recursive(0, 0, 0755, 6755, "/sbin");
+delete("/file_contexts"); package_extract_file("file_contexts", "/file_contexts"); set_perm(0, 0, 0644, "/file_contexts");
+delete("sbin/adbd"); package_extract_file("sbin/adbd", "/sbin/adbd"); set_perm(0, 0, 6755, "/sbin/adbd");
+delete("sbin/busybox"); package_extract_file("sbin/busybox", "/sbin/busybox"); set_perm(0, 0, 6755, "/sbin/busybox");
+delete("sbin/recovery"); package_extract_file("sbin/recovery", "/sbin/recovery"); set_perm(0, 0, 6755, "/sbin/recovery");
+delete("sbin/parted"); package_extract_file("sbin/parted", "/sbin/parted"); set_perm(0, 0, 6755, "/sbin/parted");
+delete("sbin/permissive.sh"); package_extract_file("sbin/permissive.sh", "/sbin/permissive.sh"); set_perm(0, 0, 6755, "/sbin/permissive.sh");
+delete("sbin/killrecovery.sh"); package_extract_file("sbin/killrecovery.sh", "/sbin/killrecovery.sh"); set_perm(0, 0, 6755, "/sbin/killrecovery.sh");
+delete("sbin/dump_image"); package_extract_file("sbin/dump_image", "/sbin/dump_image"); set_perm(0, 0, 6755, "/sbin/dump_image");
+delete("sbin/e2fsck"); package_extract_file("sbin/e2fsck", "/sbin/e2fsck"); set_perm(0, 0, 6755, "/sbin/e2fsck");
+delete("sbin/erase_image"); package_extract_file("sbin/erase_image", "/sbin/erase_image"); set_perm(0, 0, 6755, "/sbin/erase_image");
+delete("sbin/exfat-fuse"); package_extract_file("sbin/exfat-fuse", "/sbin/exfat-fuse"); set_perm(0, 0, 6755, "/sbin/exfat-fuse");
+delete("sbin/fatlabel"); package_extract_file("sbin/fatlabel", "/sbin/fatlabel"); set_perm(0, 0, 6755, "/sbin/fatlabel");
+delete("sbin/fb2png"); package_extract_file("sbin/fb2png", "/sbin/fb2png"); set_perm(0, 0, 6755, "/sbin/fb2png");
+delete("sbin/flash_image"); package_extract_file("sbin/flash_image", "/sbin/flash_image"); set_perm(0, 0, 6755, "/sbin/flash_image");
+delete("sbin/linker"); package_extract_file("sbin/linker", "/sbin/linker"); set_perm(0, 0, 6755, "/sbin/linker");
+delete("sbin/listxattr"); package_extract_file("sbin/listxattr", "/sbin/listxattr"); set_perm(0, 0, 6755, "/sbin/listxattr");
+delete("sbin/make_ext4fs"); package_extract_file("sbin/make_ext4fs", "/sbin/make_ext4fs"); set_perm(0, 0, 6755, "/sbin/make_ext4fs");
+delete("sbin/mke2fs"); package_extract_file("sbin/mke2fs", "/sbin/mke2fs"); set_perm(0, 0, 6755, "/sbin/mke2fs");
+delete("sbin/mkexfatfs"); package_extract_file("sbin/mkexfatfs", "/sbin/mkexfatfs"); set_perm(0, 0, 6755, "/sbin/mkexfatfs");
+delete("sbin/mkntfs"); package_extract_file("sbin/mkntfs", "/sbin/mkntfs"); set_perm(0, 0, 6755, "/sbin/mkntfs");
+delete("sbin/ntfs-3g"); package_extract_file("sbin/ntfs-3g", "/sbin/ntfs-3g"); set_perm(0, 0, 6755, "/sbin/ntfs-3g");
+delete("sbin/ntfsfix"); package_extract_file("sbin/ntfsfix", "/sbin/ntfsfix"); set_perm(0, 0, 6755, "/sbin/ntfsfix");
+delete("sbin/openaes"); package_extract_file("sbin/openaes", "/sbin/openaes"); set_perm(0, 0, 6755, "/sbin/openaes");
+delete("sbin/pigz"); package_extract_file("sbin/pigz", "/sbin/pigz"); set_perm(0, 0, 6755, "/sbin/pigz");
+delete("sbin/reboot"); package_extract_file("sbin/reboot", "/sbin/reboot"); set_perm(0, 0, 6755, "/sbin/reboot");
+delete("sbin/resize2fs"); package_extract_file("sbin/resize2fs", "/sbin/resize2fs"); set_perm(0, 0, 6755, "/sbin/resize2fs");
+delete("sbin/sgdisk"); package_extract_file("sbin/sgdisk", "/sbin/sgdisk"); set_perm(0, 0, 6755, "/sbin/sgdisk");
+delete("sbin/simg2img"); package_extract_file("sbin/simg2img", "/sbin/simg2img"); set_perm(0, 0, 6755, "/sbin/simg2img");
+delete("sbin/teamwin"); package_extract_file("sbin/teamwin", "/sbin/teamwin"); set_perm(0, 0, 6755, "/sbin/teamwin");
+delete("sbin/toolbox"); package_extract_file("sbin/toolbox", "/sbin/toolbox"); set_perm(0, 0, 6755, "/sbin/toolbox");
+delete("sbin/tune2fs"); package_extract_file("sbin/tune2fs", "/sbin/tune2fs"); set_perm(0, 0, 6755, "/sbin/tune2fs");
+delete("sbin/twrp"); package_extract_file("sbin/twrp", "/sbin/twrp"); set_perm(0, 0, 6755, "/sbin/twrp");
+delete("sbin/twrpdec"); package_extract_file("sbin/twrpdec", "/sbin/twrpdec"); set_perm(0, 0, 6755, "/sbin/twrpdec");
+delete("sbin/fsck.exfat"); package_extract_file("sbin/fsck.exfat", "/sbin/fsck.exfat"); set_perm(0, 0, 6755, "/sbin/fsck.exfat");
+delete("sbin/fsck.fat"); package_extract_file("sbin/fsck.fat", "/sbin/fsck.fat"); set_perm(0, 0, 6755, "/sbin/fsck.fat");
+delete("sbin/mkfs.fat"); package_extract_file("sbin/mkfs.fat", "/sbin/mkfs.fat"); set_perm(0, 0, 6755, "/sbin/mkfs.fat");
+delete("sbin/libaosprecovery.so"); package_extract_file("sbin/libaosprecovery.so","/sbin/libaosprecovery.so"); set_perm(0, 0, 0644,"sbin/libaosprecovery.so");
+delete("sbin/libbacktrace.so"); package_extract_file("sbin/libbacktrace.so","/sbin/libbacktrace.so"); set_perm(0, 0, 0644,"sbin/libbacktrace.so");
+delete("sbin/libblkid.so"); package_extract_file("sbin/libblkid.so","/sbin/libblkid.so"); set_perm(0, 0, 0644,"sbin/libblkid.so");
+delete("sbin/libbmlutils.so"); package_extract_file("sbin/libbmlutils.so","/sbin/libbmlutils.so"); set_perm(0, 0, 0644,"sbin/libbmlutils.so");
+delete("sbin/libbootloader_message_twrp.so"); package_extract_file("sbin/libbootloader_message_twrp.so","/sbin/libbootloader_message_twrp.so"); set_perm(0, 0, 0644,"sbin/libbootloader_message_twrp.so");
+delete("sbin/libc.so"); package_extract_file("sbin/libc.so","/sbin/libc.so"); set_perm(0, 0, 0644,"sbin/libc.so");
+delete("sbin/libc++.so"); package_extract_file("sbin/libc++.so","/sbin/libc++.so"); set_perm(0, 0, 0644,"sbin/libc++.so");
+delete("sbin/libcrecovery.so"); package_extract_file("sbin/libcrecovery.so","/sbin/libcrecovery.so"); set_perm(0, 0, 0644,"sbin/libcrecovery.so");
+delete("sbin/libcryptfslollipop.so"); package_extract_file("sbin/libcryptfslollipop.so","/sbin/libcryptfslollipop.so"); set_perm(0, 0, 0644,"sbin/libcryptfslollipop.so");
+delete("sbin/libcrypto.so"); package_extract_file("sbin/libcrypto.so","/sbin/libcrypto.so"); set_perm(0, 0, 0644,"sbin/libcrypto.so");
+delete("sbin/libcutils.so"); package_extract_file("sbin/libcutils.so","/sbin/libcutils.so"); set_perm(0, 0, 0644,"sbin/libcutils.so");
+delete("sbin/libdl.so"); package_extract_file("sbin/libdl.so","/sbin/libdl.so"); set_perm(0, 0, 0644,"sbin/libdl.so");
+delete("sbin/libexfat_twrp.so"); package_extract_file("sbin/libexfat_twrp.so","/sbin/libexfat_twrp.so"); set_perm(0, 0, 0644,"sbin/libexfat_twrp.so");
+delete("sbin/libext2_blkid.so"); package_extract_file("sbin/libext2_blkid.so","/sbin/libext2_blkid.so"); set_perm(0, 0, 0644,"sbin/libext2_blkid.so");
+delete("sbin/libext2_com_err.so"); package_extract_file("sbin/libext2_com_err.so","/sbin/libext2_com_err.so"); set_perm(0, 0, 0644,"sbin/libext2_com_err.so");
+delete("sbin/libext2_e2p.so"); package_extract_file("sbin/libext2_e2p.so","/sbin/libext2_e2p.so"); set_perm(0, 0, 0644,"sbin/libext2_e2p.so");
+delete("sbin/libext2_profile.so"); package_extract_file("sbin/libext2_profile.so","/sbin/libext2_profile.so"); set_perm(0, 0, 0644,"sbin/libext2_profile.so");
+delete("sbin/libext2_quota.so"); package_extract_file("sbin/libext2_quota.so","/sbin/libext2_quota.so"); set_perm(0, 0, 0644,"sbin/libext2_quota.so");
+delete("sbin/libext2_uuid.so"); package_extract_file("sbin/libext2_uuid.so","/sbin/libext2_uuid.so"); set_perm(0, 0, 0644,"sbin/libext2_uuid.so");
+delete("sbin/libext2fs.so"); package_extract_file("sbin/libext2fs.so","/sbin/libext2fs.so"); set_perm(0, 0, 0644,"sbin/libext2fs.so");
+delete("sbin/libext4_utils.so"); package_extract_file("sbin/libext4_utils.so","/sbin/libext4_utils.so"); set_perm(0, 0, 0644,"sbin/libext4_utils.so");
+delete("sbin/libflashutils.so"); package_extract_file("sbin/libflashutils.so","/sbin/libflashutils.so"); set_perm(0, 0, 0644,"sbin/libflashutils.so");
+delete("sbin/libft2.so"); package_extract_file("sbin/libft2.so","/sbin/libft2.so"); set_perm(0, 0, 0644,"sbin/libft2.so");
+delete("sbin/libfusesideload.so"); package_extract_file("sbin/libfusesideload.so","/sbin/libfusesideload.so"); set_perm(0, 0, 0644,"sbin/libfusesideload.so");
+delete("sbin/libgccdemangle.so"); package_extract_file("sbin/libgccdemangle.so","/sbin/libgccdemangle.so"); set_perm(0, 0, 0644,"sbin/libgccdemangle.so");
+delete("sbin/libgpt_twrp.so"); package_extract_file("sbin/libgpt_twrp.so","/sbin/libgpt_twrp.so"); set_perm(0, 0, 0644,"sbin/libgpt_twrp.so");
+delete("sbin/libhardware.so"); package_extract_file("sbin/libhardware.so","/sbin/libhardware.so"); set_perm(0, 0, 0644,"sbin/libhardware.so");
+delete("sbin/liblog.so"); package_extract_file("sbin/liblog.so","/sbin/liblog.so"); set_perm(0, 0, 0644,"sbin/liblog.so");
+delete("sbin/libm.so"); package_extract_file("sbin/libm.so","/sbin/libm.so"); set_perm(0, 0, 0644,"sbin/libm.so");
+delete("sbin/libminadbd.so"); package_extract_file("sbin/libminadbd.so","/sbin/libminadbd.so"); set_perm(0, 0, 0644,"sbin/libminadbd.so");
+delete("sbin/libmincrypttwrp.so"); package_extract_file("sbin/libmincrypttwrp.so","/sbin/libmincrypttwrp.so"); set_perm(0, 0, 0644,"sbin/libmincrypttwrp.so");
+delete("sbin/libminuitwrp.so"); package_extract_file("sbin/libminuitwrp.so","/sbin/libminuitwrp.so"); set_perm(0, 0, 0644,"sbin/libminuitwrp.so");
+delete("sbin/libminzip.so"); package_extract_file("sbin/libminzip.so","/sbin/libminzip.so"); set_perm(0, 0, 0644,"sbin/libminzip.so");
+delete("sbin/libmmcutils.so"); package_extract_file("sbin/libmmcutils.so","/sbin/libmmcutils.so"); set_perm(0, 0, 0644,"sbin/libmmcutils.so");
+delete("sbin/libmtdutils.so"); package_extract_file("sbin/libmtdutils.so","/sbin/libmtdutils.so"); set_perm(0, 0, 0644,"sbin/libmtdutils.so");
+delete("sbin/libnetd_client.so"); package_extract_file("sbin/libnetd_client.so","/sbin/libnetd_client.so"); set_perm(0, 0, 0644,"sbin/libnetd_client.so");
+delete("sbin/libopenaes.so"); package_extract_file("sbin/libopenaes.so","/sbin/libopenaes.so"); set_perm(0, 0, 0644,"sbin/libopenaes.so");
+delete("sbin/libpcre.so"); package_extract_file("sbin/libpcre.so","/sbin/libpcre.so"); set_perm(0, 0, 0644,"sbin/libpcre.so");
+delete("sbin/libpng.so"); package_extract_file("sbin/libpng.so","/sbin/libpng.so"); set_perm(0, 0, 0644,"sbin/libpng.so");
+delete("sbin/libselinux.so"); package_extract_file("sbin/libselinux.so","/sbin/libselinux.so"); set_perm(0, 0, 0644,"sbin/libselinux.so");
+delete("sbin/libsparse.so"); package_extract_file("sbin/libsparse.so","/sbin/libsparse.so"); set_perm(0, 0, 0644,"sbin/libsparse.so");
+delete("sbin/libstdc++.so"); package_extract_file("sbin/libstdc++.so","/sbin/libstdc++.so"); set_perm(0, 0, 0644,"sbin/libstdc++.so");
+delete("sbin/libstlport.so"); package_extract_file("sbin/libstlport.so","/sbin/libstlport.so"); set_perm(0, 0, 0644,"sbin/libstlport.so");
+delete("sbin/libtar.so"); package_extract_file("sbin/libtar.so","/sbin/libtar.so"); set_perm(0, 0, 0644,"sbin/libtar.so");
+delete("sbin/libtwadbbu.so"); package_extract_file("sbin/libtwadbbu.so","/sbin/libtwadbbu.so"); set_perm(0, 0, 0644,"sbin/libtwadbbu.so");
+delete("sbin/libtwrpdigest.so"); package_extract_file("sbin/libtwrpdigest.so","/sbin/libtwrpdigest.so"); set_perm(0, 0, 0644,"sbin/libtwrpdigest.so");
+delete("sbin/libtwrpmtp.so"); package_extract_file("sbin/libtwrpmtp.so","/sbin/libtwrpmtp.so"); set_perm(0, 0, 0644,"sbin/libtwrpmtp.so");
+delete("sbin/libunwind.so"); package_extract_file("sbin/libunwind.so","/sbin/libunwind.so"); set_perm(0, 0, 0644,"sbin/libunwind.so");
+delete("sbin/libunwind-ptrace.so"); package_extract_file("sbin/libunwind-ptrace.so","/sbin/libunwind-ptrace.so"); set_perm(0, 0, 0644,"sbin/libunwind-ptrace.so");
+delete("sbin/libusbhost.so"); package_extract_file("sbin/libusbhost.so","/sbin/libusbhost.so"); set_perm(0, 0, 0644,"sbin/libusbhost.so");
+delete("sbin/libutil-linux.so"); package_extract_file("sbin/libutil-linux.so","/sbin/libutil-linux.so"); set_perm(0, 0, 0644,"sbin/libutil-linux.so");
+delete("sbin/libutils.so"); package_extract_file("sbin/libutils.so","/sbin/libutils.so"); set_perm(0, 0, 0644,"sbin/libutils.so");
+delete("sbin/libz.so"); package_extract_file("sbin/libz.so","/sbin/libz.so"); set_perm(0, 0, 0644,"sbin/libz.so");
+show_progress(0.500000, 0);
+ui_print("- Create TWRP symlinks...");
+symlink("busybox","/sbin/[" ,"/sbin/[[" ,"/sbin/adjtimex" ,"/sbin/arp" ,"/sbin/ash" ,"/sbin/awk" ,"/sbin/base64" ,"/sbin/basename" ,
+	"/sbin/bbconfig" ,"/sbin/blkid" ,"/sbin/blockdev" ,"/sbin/brctl" ,"/sbin/bunzip2" ,"/sbin/bzcat" ,"/sbin/bzip2" ,"/sbin/cal" ,
+	"/sbin/cat" ,"/sbin/catv" ,"/sbin/chattr" ,"/sbin/chcon" ,"/sbin/chgrp" ,"/sbin/chmod" ,"/sbin/chown" ,"/sbin/chroot" ,"/sbin/chvt" ,
+	"/sbin/clear" ,"/sbin/cmp" ,"/sbin/comm" ,"/sbin/cp" ,"/sbin/cpio" ,"/sbin/crond" ,"/sbin/crontab" ,"/sbin/cut" ,"/sbin/date" ,
+	"/sbin/dc" ,"/sbin/dd" ,"/sbin/deallocvt" ,"/sbin/depmod" ,"/sbin/devmem" ,"/sbin/df" ,"/sbin/diff" ,"/sbin/dirname" ,"/sbin/dmesg" ,
+	"/sbin/dnsd" ,"/sbin/dos2unix" ,"/sbin/du" ,"/sbin/echo" ,"/sbin/ed" ,"/sbin/egrep" ,"/sbin/env" ,"/sbin/expand" ,"/sbin/expr" ,
+	"/sbin/false" ,"/sbin/fbset" ,"/sbin/fbsplash" ,"/sbin/fdisk" ,"/sbin/fgconsole" ,"/sbin/fgrep" ,"/sbin/find" ,"/sbin/findfs" ,"/sbin/flash_lock" ,
+	"/sbin/flash_unlock" ,"/sbin/flashcp" ,"/sbin/flock" ,"/sbin/fold" ,"/sbin/free" ,"/sbin/freeramdisk" ,"/sbin/fstrim" ,"/sbin/fsync" ,
+	"/sbin/ftpget" ,"/sbin/ftpput" ,"/sbin/fuser" ,"/sbin/getenforce" ,"/sbin/getopt" ,"/sbin/getsebool" ,"/sbin/grep" ,
+	"/sbin/groups" ,"/sbin/gunzip" ,"/sbin/gzip" ,"/sbin/halt" ,"/sbin/head" ,"/sbin/hexdump" ,"/sbin/hwclock" ,"/sbin/id" ,
+	"/sbin/ifconfig" ,"/sbin/inetd" ,"/sbin/insmod" ,"/sbin/install" ,"/sbin/ionice" ,"/sbin/iostat" ,"/sbin/ip" ,"/sbin/kill" ,
+	"/sbin/killall" ,"/sbin/killall5" ,"/sbin/less" ,"/sbin/ln" ,"/sbin/losetup" ,"/sbin/ls" ,"/sbin/lsattr" ,
+	"/sbin/lsmod" ,"/sbin/lspci" ,"/sbin/lsusb" ,"/sbin/lzcat" ,"/sbin/lzma" ,"/sbin/lzop" ,"/sbin/lzopcat" ,"/sbin/man" ,
+	"/sbin/matchpathcon" ,"/sbin/md5sum" ,"/sbin/mesg" ,"/sbin/mkdir" ,"/sbin/mkdosfs" ,"/sbin/mke2fs" ,"/sbin/mkfifo" ,"/sbin/mkfs.ext2" ,
+	"/sbin/mkfs.vfat" ,"/sbin/mknod" ,"/sbin/mkswap" ,
+	"/sbin/mktemp" ,"/sbin/modinfo" ,"/sbin/modprobe" ,"/sbin/more" ,"/sbin/mount" ,"/sbin/mountpoint" ,"/sbin/mpstat" ,"/sbin/mv" ,
+	"/sbin/nanddump" ,"/sbin/nandwrite" ,"/sbin/nbd-client" ,"/sbin/nc" ,"/sbin/netstat" ,"/sbin/nice" ,"/sbin/nmeter" ,"/sbin/nohup" ,
+	"/sbin/nslookup" ,"/sbin/ntpd" ,"/sbin/od" ,"/sbin/openvt" ,"/sbin/patch" ,"/sbin/pgrep" ,"/sbin/pidof" ,"/sbin/ping" ,
+	"/sbin/pipe_progress" ,"/sbin/pkill" ,"/sbin/pmap" ,"/sbin/poweroff" ,"/sbin/printenv" ,"/sbin/printf" ,"/sbin/ps" ,"/sbin/pstree" ,
+	"/sbin/pwd" ,"/sbin/pwdx" ,"/sbin/rdate" ,"/sbin/rdev" ,"/sbin/readlink" ,"/sbin/realpath" ,"/sbin/reboot" ,"/sbin/renice" ,
+	"/sbin/reset" ,"/sbin/resize" ,"/sbin/restorecon" ,"/sbin/rev" ,"/sbin/rm" ,"/sbin/rmdir" ,"/sbin/rmmod" ,"/sbin/route" ,
+	"/sbin/runcon" ,"/sbin/run-parts" ,"/sbin/rx" ,"/sbin/sed" ,"/sbin/selinuxenabled" ,"/sbin/seq" ,"/sbin/sestatus" ,"/sbin/setconsole" ,
+	"/sbin/setenforce" ,"/sbin/setfiles" ,"/sbin/setkeycodes" ,"/sbin/setsebool" ,"/sbin/setserial" ,"/sbin/setsid" ,
+	"/sbin/sha1sum" ,"/sbin/sha256sum" ,"/sbin/sha3sum" ,"/sbin/sha512sum" ,"/sbin/sleep" ,"/sbin/smemcap" ,"/sbin/sort" ,"/sbin/split" ,
+	"/sbin/stat" ,"/sbin/strings" ,"/sbin/stty" ,"/sbin/sum" ,"/sbin/swapoff" ,"/sbin/swapon" ,"/sbin/switch_root" ,"/sbin/sync" ,
+	"/sbin/sysctl" ,"/sbin/tac" ,"/sbin/tail" ,"/sbin/tar" ,"/sbin/taskset" ,"/sbin/tee" ,"/sbin/telnet" ,"/sbin/telnetd" ,"/sbin/test" ,
+	"/sbin/tftp" ,"/sbin/tftpd" ,"/sbin/time" ,"/sbin/timeout" ,"/sbin/top" ,"/sbin/touch" ,"/sbin/tr" ,"/sbin/traceroute" ,"/sbin/true" ,
+	"/sbin/ttysize" ,"/sbin/tune2fs" ,"/sbin/umount" ,"/sbin/uname" ,"/sbin/uncompress" ,"/sbin/unexpand" ,"/sbin/uniq" ,"/sbin/unix2dos" ,
+	"/sbin/unlzma" ,"/sbin/unlzop" ,"/sbin/unxz" ,"/sbin/unzip" ,"/sbin/uptime" ,"/sbin/usleep" ,"/sbin/uudecode" ,
+	"/sbin/uuencode" ,"/sbin/vi" ,"/sbin/watch" ,"/sbin/watchdogd" ,"/sbin/wc" ,"/sbin/wget" ,"/sbin/which" ,"/sbin/whoami" ,"/sbin/xargs" ,
+	"/sbin/xz" ,"/sbin/xzcat" ,"/sbin/yes" ,"/sbin/zcat");
+symlink("../init", "/sbin/ueventd", "/sbin/watchdogd");
+symlink("pigz", "/sbin/gzip", "/sbin/unpigz", "/sbin/gunzip");
+symlink("toolbox", "/sbin/getprop", "/sbin/load_policy" , "/sbin/r", "/sbin/setprop", "/sbin/start", "/sbin/stop", "/sbin/setenforce");
+symlink("fsck.exfat" , "/sbin/mount.exfat",  "/sbin/mkfs.exfat");
+show_progress(0.300000, 0);
+ui_print("- Run TWRP recovery 3.2.2 as application...");
+run_program("/sbin/setprop","service.adb.root","1");
+run_program("/sbin/setprop","persist.sys.root_access","1");
+run_program("/sbin/busybox", "sh", "-c", "/sbin/killrecovery.sh");
+show_progress(0.100000, 0);
+ui_print("- All done...................");
