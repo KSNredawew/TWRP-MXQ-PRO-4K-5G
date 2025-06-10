@@ -1,4 +1,4 @@
-# TWRP for MXQ PRO 4K 5G
+# TWRP for MXQ 4K 5G
 
 This repository contains the unofficial TWRP recovery image for the MXQ PRO 4K 5G.
 
